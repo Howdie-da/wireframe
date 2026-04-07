@@ -11,9 +11,9 @@ This repository is currently in active development. The core UI layout and routi
 - [x] React Router architecture setup
 - [x] Production-ready responsive Header & Footer
 - [x] Custom Terminal-themed Landing Page (with React typewriter effect)
+- [x] Authentication via Appwrite
 
 **Upcoming:**
-- [ ] Authentication via Appwrite
 - [ ] Redux Store setup for global state
 - [ ] TinyMCE rich text editor integration
 - [ ] CRUD operations for Blog Posts
@@ -34,7 +34,7 @@ This repository is currently in active development. The core UI layout and routi
 * [TinyMCE](https://www.tiny.cloud/) - Rich text editor for writing blogs
 * [html-react-parser](https://www.npmjs.com/package/html-react-parser) - Safe rendering of HTML blog content
 
-**Backend as a Service (Upcoming)**
+**Backend as a Service**
 * [Appwrite](https://appwrite.io/) - Open-source backend for Auth, Databases, and Storage
 
 ## Getting Started
@@ -43,4 +43,4 @@ To run this project locally:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/wireframe.git](https://github.com/yourusername/wireframe.git)
+   git clone [https://github.com/Howdie-da/wireframe.git](https://github.com/Howdie-da/wireframe.git)
