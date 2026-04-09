@@ -1,7 +1,13 @@
 import { Link, NavLink } from 'react-router';
 import img from '../assets/Logo.png';
+import { useSelector } from 'react-redux';
+import LogoutBtn from './LogoutBtn';
 
 function Header() {
+
+  const authStatus = useSelector((state) => state.status)
+
+
   const NavClass = ({ isActive }) =>
     `cursor-pointer px-4 py-2 text-sm md:text-base font-medium transition-colors duration-200 rounded-md ` +
     (isActive ? "text-cyan-400 bg-gray-900/50" : "text-gray-300 hover:text-cyan-300 hover:bg-gray-800");
@@ -28,12 +34,16 @@ function Header() {
           </div>
 
           <div className="flex items-center">
-            <Link
-              to="/login"
-              className="text-white bg-cyan-600 hover:bg-black hover:font-medium hover:text-cyan-300 focus:ring-4 focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors duration-200"
-            >
-              Log-in
-            </Link>
+            {authStatus ? (
+                <LogoutBtn />
+              ) : (
+                <Link
+                  to="/login"
+                  className="text-white bg-cyan-600 hover:bg-black hover:font-medium hover:text-cyan-300 focus:ring-4 focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors duration-200"
+                >
+                  Log-in
+                </Link>
+              )}
           </div>
         </div>
       </nav>
