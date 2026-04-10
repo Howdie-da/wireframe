@@ -12,12 +12,12 @@ This repository is currently in active development. The core UI layout and routi
 - [x] Production-ready responsive Header & Footer
 - [x] Custom Terminal-themed Landing Page (with React typewriter effect)
 - [x] Authentication via Appwrite
+- [x] Redux Store setup for global state
+- [x] Form handling with React Hook Form
 
 **Upcoming:**
-- [ ] Redux Store setup for global state
 - [ ] TinyMCE rich text editor integration
 - [ ] CRUD operations for Blog Posts
-- [ ] Form handling with React Hook Form
 
 ## Tech Stack
 
