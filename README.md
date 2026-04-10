@@ -3,7 +3,7 @@
 
 An open-source, distraction-free blogging platform built for those who want to escape the algorithm. Wireframe strips away the clutter, relying on a sleek cyan-black terminal aesthetic to put the focus exactly where it belongs: the writing.
 
-## Current Status (Phase 1: Foundation)
+## Current Status
 
 This repository is currently in active development. The core UI layout and routing architecture have been established, setting the stage for backend integration.
 
@@ -14,9 +14,9 @@ This repository is currently in active development. The core UI layout and routi
 - [x] Authentication via Appwrite
 - [x] Redux Store setup for global state
 - [x] Form handling with React Hook Form
+- [x] TinyMCE rich text editor integration
 
 **Upcoming:**
-- [ ] TinyMCE rich text editor integration
 - [ ] CRUD operations for Blog Posts
 
 ## Tech Stack
@@ -26,11 +26,11 @@ This repository is currently in active development. The core UI layout and routi
 * [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling for the cyan-black aesthetic
 * [React Router](https://reactrouter.com/) - Client-side routing
 
-**State & Form Management (Upcoming)**
+**State & Form Management**
 * [Redux Toolkit](https://redux-toolkit.js.org/) - Global state management
 * [React Hook Form](https://react-hook-form.com/) - Performant, flexible form validation
 
-**Content & Rendering (Upcoming)**
+**Content & Rendering**
 * [TinyMCE](https://www.tiny.cloud/) - Rich text editor for writing blogs
 * [html-react-parser](https://www.npmjs.com/package/html-react-parser) - Safe rendering of HTML blog content
 
