@@ -1,22 +1,9 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
-import Layout from './Layout.jsx'
-import { Home } from './components'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import authService from './appwrite/auth.js'
-import { useEffect, useState } from 'react'
-import { login, logout } from './store/authSlice.js'
-
-
-const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path='/' element={<Layout/>}>
-            <Route path='' element={<Home/>}/>
-            <Route path='/about'/>
-            <Route path='/blogs'/>
-            <Route path='/login'/>
-        </Route>
-    )
-)
+import authService from "./appwrite/auth"
+import {login, logout} from "./store/authSlice"
+import { Footer, Header } from './components'
+import { Outlet } from 'react-router'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -25,17 +12,23 @@ function App() {
   useEffect(() => {
     authService.getCurrentUser()
     .then((userData) => {
-      if(userData) {
+      if (userData) {
         dispatch(login({userData}))
-      }else {
+      } else {
         dispatch(logout())
       }
     })
     .finally(() => setLoading(false))
   }, [])
-
+  
   return !loading ? (
-    <RouterProvider router={router}/>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="grow flex flex-col">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   ) : null
 }
 
