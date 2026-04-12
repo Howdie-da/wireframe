@@ -11,6 +11,7 @@ function RTE({name, control, label, defaultValue=''}) {
         control = {control}
         render={({field: {onChange}}) => (
             <Editor
+            tinymceScriptSrc="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"
             initialValue={defaultValue}
             init={{
                 initialValue: defaultValue,

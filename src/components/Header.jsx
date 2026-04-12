@@ -25,8 +25,8 @@ function Header() {
             <NavLink to="/" className={NavClass}>
               Home
             </NavLink>
-            <NavLink to="/about" className={NavClass}>
-              About
+            <NavLink to="/add-post" className={NavClass}>
+              Create
             </NavLink>
             <NavLink to="/all-posts" className={NavClass}>
               Blogs

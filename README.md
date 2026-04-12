@@ -15,9 +15,10 @@ This repository is currently in active development. The core UI layout and routi
 - [x] Redux Store setup for global state
 - [x] Form handling with React Hook Form
 - [x] TinyMCE rich text editor integration
+- [x] CRUD operations for Blog Posts
 
 **Upcoming:**
-- [ ] CRUD operations for Blog Posts
+- [ ] Applied theme aesthetic
 
 ## Tech Stack
 
