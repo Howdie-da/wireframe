@@ -25,14 +25,14 @@ function Login() {
                 }
             }
         } catch(error) {
-            setError(error.messgae)
+            setError(error.message)
         }
     }
 
 
   return (
     <div className="flex items-center justify-center w-full">
-        <div className='max-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10'>
+        <div className='mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10'>
             <div className="mb-2 flex justify-center">
                 <span className="inline-block w-full max-w-25">
                     <div width='100%'>Logo</div>

@@ -28,7 +28,7 @@ function Header() {
             <NavLink to="/about" className={NavClass}>
               About
             </NavLink>
-            <NavLink to="/blogs" className={NavClass}>
+            <NavLink to="/all-posts" className={NavClass}>
               Blogs
             </NavLink>
           </div>

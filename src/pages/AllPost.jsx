@@ -3,10 +3,10 @@ import {Container, PostCard} from '../components'
 import { useEffect, useState } from 'react'
 
 function AllPost() {
-    cosnt [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([])
     useEffect(() => {
-        appwriteService.getPost([])
-        .then((posts) => posts ? setPost(posts.documents) : null)
+        appwriteService.getPosts([])
+        .then((posts) => posts ? setPosts(posts.rows) : null)
     }, [])
 
 
@@ -14,9 +14,9 @@ function AllPost() {
     <div className='w-full py-8'>
         <Container>
             <div className='flex flex-wrap'>
-                {posts.map((post) => (
+                {posts?.map((post) => (
                     <div key={post.$id} className='p-2 w-1/4'>
-                        <PostCard post={post}/>
+                        <PostCard {...post}/>
                     </div>
                 ))}
             </div>
