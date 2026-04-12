@@ -16,7 +16,7 @@ function PostForm({post}) {
     })
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.userData)
+    const userData = useSelector(state => state.auth.userData)
 
     const submit = async(data) => {
         if(post) {
@@ -72,7 +72,7 @@ function PostForm({post}) {
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-        <div className="w-2/3 px-2">
+        <div className="w-full lg:w-2/3 px-2">
             <Input
                 label="Title :"
                 placeholder="Title"
@@ -90,7 +90,8 @@ function PostForm({post}) {
             />
             <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
         </div>
-        <div className="w-1/3 px-2">
+
+        <div className="w-full lg:w-1/3 px-2 mt-4 lg:mt-0">
             <Input
                 label="Featured Image :"
                 type="file"
@@ -101,9 +102,9 @@ function PostForm({post}) {
             {post && (
                 <div className="w-full mb-4">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={appwriteService.getFileView(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-lg"
+                        className="rounded-lg border border-black/10" 
                     />
                 </div>
             )}
@@ -113,7 +114,10 @@ function PostForm({post}) {
                 className="mb-4"
                 {...register("status", { required: true })}
             />
-            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+            <Button 
+                type="submit" 
+                className="w-full"
+            >
                 {post ? "Update" : "Submit"}
             </Button>
         </div>

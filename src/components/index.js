@@ -12,5 +12,6 @@ import RTE from "./RTE";
 import Select from './Select';
 import Signup from './Signup';
 import PostForm from "./post-form/PostForm";
+import Logo from '../assets/Logo.png'
 
-export {Home,Header,Footer,Container,AuthLayout,Button,Input,Login,LogoutBtn,PostCard,RTE,Select,Signup,PostForm}
+export {Home,Header,Footer,Container,AuthLayout,Button,Input,Login,LogoutBtn,PostCard,RTE,Select,Signup,PostForm,Logo}

@@ -1,8 +1,6 @@
 import conf from '../conf/conf.js'
 import { Client, Account, ID } from 'appwrite'
 
-//this code can be reused whenever we need a authentication service from appwrite
-
 export class AuthService {
     client = new Client()
     account
@@ -20,7 +18,6 @@ export class AuthService {
             const userAccount = await this.account.create({userId: ID.unique(), email, password, name})
 
             if (userAccount) {
-                // call another method for login
                 return this.login({email, password})
             }else {
                 return userAccount

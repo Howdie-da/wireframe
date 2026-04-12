@@ -4,16 +4,26 @@ import { Controller } from 'react-hook-form'
 function RTE({name, control, label, defaultValue=''}) {
   return (
     <div className='w-full'>
-        {label && <label className='inline=block mb-1 pl-1'>{label}</label>}
+        {label && (
+            <label 
+                className='inline-block mb-1.5 pl-1 text-sm font-semibold'
+            >
+                {label}
+            </label>
+        )}
 
         <Controller
-        name = {name || "content"}
-        control = {control}
+        name={name || "content"}
+        control={control}
         render={({field: {onChange}}) => (
             <Editor
             tinymceScriptSrc="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js"
             initialValue={defaultValue}
             init={{
+
+                promotion: false, 
+                branding: false,
+
                 initialValue: defaultValue,
                 height: 500,
                 menubar: true,
@@ -23,7 +33,6 @@ function RTE({name, control, label, defaultValue=''}) {
                     "autolink",
                     "lists",
                     "link",
-                    "image",
                     "charmap",
                     "preview",
                     "anchor",
@@ -34,20 +43,17 @@ function RTE({name, control, label, defaultValue=''}) {
                     "insertdatetime",
                     "media",
                     "table",
-                    "code",
                     "help",
                     "wordcount",
-                    "anchor",
                 ],
                 toolbar:
-                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
                 content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }"
             }}
             onEditorChange={onChange}
             />
         )}
         />
-
     </div>
   )
 }

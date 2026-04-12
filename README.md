@@ -1,11 +1,11 @@
 # WIREFRAME
-> A minimalist, night-themed blogging platform. Just the words, Nothing else.
+> A minimalist, dark-themed blogging platform. Just the words, Nothing else.
 
 An open-source, distraction-free blogging platform built for those who want to escape the algorithm. Wireframe strips away the clutter, relying on a sleek cyan-black terminal aesthetic to put the focus exactly where it belongs: the writing.
 
 ## Current Status
 
-This repository is currently in active development. The core UI layout and routing architecture have been established, setting the stage for backend integration.
+This repository is currently in active development. The core UI layout and routing architecture have been established, and the primary backend integration is complete. 
 
 **Completed:**
 - [x] React Router architecture setup
@@ -18,7 +18,7 @@ This repository is currently in active development. The core UI layout and routi
 - [x] CRUD operations for Blog Posts
 
 **Upcoming:**
-- [ ] Applied theme aesthetic
+- [ ] Redux Store setup for Blog Posts (Caching optimization)
 
 ## Tech Stack
 
@@ -40,8 +40,36 @@ This repository is currently in active development. The core UI layout and routi
 
 ## Getting Started
 
-To run this project locally:
+To run this project locally, you will need Node.js installed on your machine and an active Appwrite project.
 
 1. Clone the repository:
    ```bash
    git clone [https://github.com/Howdie-da/wireframe.git](https://github.com/Howdie-da/wireframe.git)
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd wireframe
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Set up your environment variables. Create a `.env` file in the root directory and add your Appwrite credentials:
+   ```env
+   VITE_APPWRITE_URL="YOUR_APPWRITE_URL"
+   VITE_APPWRITE_PROJECT_ID="YOUR_PROJECT_ID"
+   VITE_APPWRITE_DATABASE_ID="YOUR_DATABASE_ID"
+   VITE_APPWRITE_COLLECTION_ID="YOUR_COLLECTION_ID"
+   VITE_APPWRITE_BUCKET_ID="YOUR_BUCKET_ID"
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Author
+Developed by Akshat.

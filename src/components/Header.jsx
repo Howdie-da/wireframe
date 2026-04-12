@@ -1,11 +1,10 @@
 import { Link, NavLink } from 'react-router';
-import img from '../assets/Logo.png';
+import {LogoutBtn, Logo as img} from '../components';
 import { useSelector } from 'react-redux';
-import LogoutBtn from './LogoutBtn';
 
 function Header() {
 
-  const authStatus = useSelector((state) => state.status)
+  const authStatus = useSelector((state) => state.auth.status)
 
 
   const NavClass = ({ isActive }) =>
@@ -25,11 +24,11 @@ function Header() {
             <NavLink to="/" className={NavClass}>
               Home
             </NavLink>
-            <NavLink to="/add-post" className={NavClass}>
-              Create
-            </NavLink>
             <NavLink to="/all-posts" className={NavClass}>
               Blogs
+            </NavLink>
+            <NavLink to="/add-post" className={NavClass}>
+              Create
             </NavLink>
           </div>
 
@@ -41,7 +40,7 @@ function Header() {
                   to="/login"
                   className="text-white bg-cyan-600 hover:bg-black hover:font-medium hover:text-cyan-300 focus:ring-4 focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none transition-colors duration-200"
                 >
-                  Log-in
+                  Login
                 </Link>
               )}
           </div>
