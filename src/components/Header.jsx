@@ -14,9 +14,9 @@ function Header() {
   return (
     <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
       <nav className="w-full">
-        <div className="max-w-screen-2xl flex flex-wrap items-center justify-end md:justify-between mx-auto p-4 px-6 md:px-10">
+        <div className="max-w-screen-2xl flex flex-wrap items-center justify-center md:justify-between mx-auto p-4 px-6 md:px-10">
           
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="hidden md:flex items-center">
             <img src={img} alt="Logo" className="h-10 w-auto" />
           </Link>
 
@@ -32,7 +32,7 @@ function Header() {
             </NavLink>
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center ml-2">
             {authStatus ? (
                 <LogoutBtn />
               ) : (
