@@ -3,7 +3,8 @@ import { Link, useNavigate, useParams } from "react-router";
 import appwriteService from "../appwrite/config";
 import { Button, Container } from "../components";
 import parse from "html-react-parser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteOne } from "../store/postSlice";
 
 export default function Post() {
     const [post, setPost] = useState(null);
@@ -12,21 +13,33 @@ export default function Post() {
 
     const userData = useSelector((state) => state.auth.userData);
 
+    const dispatch = useDispatch()
+
+    const allPosts = useSelector((state) => state.posts.allPosts);
+
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
     useEffect(() => {
         if (slug) {
-            appwriteService.getPost(slug).then((post) => {
-                if (post) setPost(post);
-                else navigate("/");
-            });
+            const cachedPost = allPosts.find((p) => p.$id === slug);
+
+            if(cachedPost) {
+                setPost(cachedPost)
+            }else {
+                appwriteService.getPost(slug).then((post) => {
+                    if (post) setPost(post);
+                    else navigate("/");
+                });
+            }
         } else navigate("/");
-    }, [slug, navigate]);
+    }, [slug, navigate, allPosts]);
+
 
     const deletePost = () => {
         appwriteService.deletePost(post.$id).then((status) => {
             if (status) {
                 appwriteService.deleteFile(post.featuredImage);
+                dispatch(deleteOne(post.$id))
                 navigate("/");
             }
         });
@@ -39,7 +52,7 @@ export default function Post() {
                     <img
                         src={appwriteService.getFileView(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl object-contain max-h-125]" 
+                        className="rounded-xl object-contain max-h-125" 
                     />
 
                     {isAuthor && (

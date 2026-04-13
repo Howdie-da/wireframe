@@ -5,6 +5,9 @@ import appwriteService from '../../appwrite/config'
 import { useNavigate } from "react-router"
 import { useSelector } from "react-redux"
 
+import { useDispatch } from "react-redux"
+import { addOne, updateOne } from "../../store/postSlice"
+
 function PostForm({post}) {
     const {register, handleSubmit, watch, setValue, control, getValues} = useForm({
         defaultValues: {
@@ -17,6 +20,8 @@ function PostForm({post}) {
 
     const navigate = useNavigate()
     const userData = useSelector(state => state.auth.userData)
+
+    const dispatch = useDispatch()
 
     const submit = async(data) => {
         if(post) {
@@ -31,6 +36,7 @@ function PostForm({post}) {
 
             })
             if(dbPost) {
+                dispatch(updateOne(dbPost))
                 navigate(`/post/${dbPost.$id}`)
             }
         }else {
@@ -44,6 +50,7 @@ function PostForm({post}) {
                     userId: userData.$id
                 })
                 if(dbPost) {
+                    dispatch(addOne(dbPost))
                     navigate(`/post/${dbPost.$id}`)
                 }
             }

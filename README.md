@@ -1,42 +1,37 @@
-# WIREFRAME
-> A minimalist, dark-themed blogging platform. Just the words, Nothing else.
+# WIREFRAME 🖋️
 
-An open-source, distraction-free blogging platform built for those who want to escape the algorithm. Wireframe strips away the clutter, relying on a sleek cyan-black terminal aesthetic to put the focus exactly where it belongs: the writing.
+A high-performance, minimalist blogging platform built with React, Redux Toolkit, and Appwrite. 
 
-## Current Status
+Designed with a focus on speed and user experience, Wireframe utilizes an aggressive "Eager Loading" state management architecture to eliminate network wait times, delivering an instant, buttery-smooth reading experience.
 
-This repository is currently in active development. The core UI layout and routing architecture have been established, and the primary backend integration is complete. 
+**[Live Demo](https://your-live-link-here.com)**
 
-**Completed:**
-- [x] React Router architecture setup
-- [x] Production-ready responsive Header & Footer
-- [x] Custom Terminal-themed Landing Page (with React typewriter effect)
-- [x] Authentication via Appwrite
-- [x] Redux Store setup for global state
-- [x] Form handling with React Hook Form
-- [x] TinyMCE rich text editor integration
-- [x] CRUD operations for Blog Posts
+## 🚀 Tech Stack
 
-**Upcoming:**
-- [ ] Redux Store setup for Blog Posts (Caching optimization)
+* **Frontend:** React (Vite)
+* **Styling:** Tailwind CSS
+* **State Management:** Redux Toolkit (RTK)
+* **Routing:** React Router
+* **Forms & Validation:** React Hook Form
+* **Rich Text Editor:** TinyMCE
+* **Backend / BaaS:** Appwrite (Auth, Database, Storage)
 
-## Tech Stack
+## ✨ Key Features
 
-**Frontend Framework & Styling**
-* [React](https://react.dev/) - Core UI library
-* [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling for the cyan-black aesthetic
-* [React Router](https://reactrouter.com/) - Client-side routing
+* **Complete Authentication:** Secure email/password login and signup flow.
+* **Full CRUD Operations:** Create, read, update, and delete blog posts.
+* **Rich Text Formatting:** Embedded TinyMCE editor for highly customized article layouts.
+* **Image Management:** Seamless image uploading, rendering, and automatic storage cleanup upon post deletion.
+* **Redux Cache-First Architecture:** Posts are eagerly loaded into the global state upon authentication. Navigating between feeds and individual posts happens with zero network latency.
+* **Protected Routes:** Component-level security ensures that only post authors can see or access the Edit and Delete controls for their specific content.
 
-**State & Form Management**
-* [Redux Toolkit](https://redux-toolkit.js.org/) - Global state management
-* [React Hook Form](https://react-hook-form.com/) - Performant, flexible form validation
+## 🧠 Architectural Highlights
 
-**Content & Rendering**
-* [TinyMCE](https://www.tiny.cloud/) - Rich text editor for writing blogs
-* [html-react-parser](https://www.npmjs.com/package/html-react-parser) - Safe rendering of HTML blog content
+### The "Zero-Latency" Read Experience
+Instead of fetching data from the database every time a user clicks a post, Wireframe intercepts the network request and checks the global Redux store first. If the data is cached, the UI renders instantly. A network fallback is securely in place to handle direct URL sharing.
 
-**Backend as a Service**
-* [Appwrite](https://appwrite.io/) - Open-source backend for Auth, Databases, and Storage
+### Centralized Service Classes
+Database and Authentication logic is completely decoupled from the React components. Custom `appwriteService` and `authService` classes handle all backend communication, keeping the UI components clean, readable, and highly maintainable.
 
 ## Getting Started
 
@@ -70,6 +65,15 @@ To run this project locally, you will need Node.js installed on your machine and
    ```bash
    npm run dev
    ```
+
+## Future Roadmap
+User Profile Pages
+
+Comment Section & Like functionality
+
+Dark/Light Mode Toggle
+
+Markdown Support
 
 ## Author
 Developed by Akshat.
