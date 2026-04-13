@@ -9,7 +9,7 @@ Designed with a focus on speed and user experience, Wireframe utilizes an aggres
 ## 🚀 Tech Stack
 
 * **Frontend:** React (Vite)
-* **Styling:** Tailwind CSS
+* **Styling:** Tailwind CSS (with `@tailwindcss/typography` plugin)
 * **State Management:** Redux Toolkit (RTK)
 * **Routing:** React Router
 * **Forms & Validation:** React Hook Form
@@ -20,7 +20,7 @@ Designed with a focus on speed and user experience, Wireframe utilizes an aggres
 
 * **Complete Authentication:** Secure email/password login and signup flow.
 * **Full CRUD Operations:** Create, read, update, and delete blog posts.
-* **Rich Text Formatting:** Embedded TinyMCE editor for highly customized article layouts.
+* **Rich Text Formatting:** Embedded TinyMCE editor for highly customized article layouts, perfectly rendered on the frontend using Tailwind's Typography plugin with prose class.
 * **Image Management:** Seamless image uploading, rendering, and automatic storage cleanup upon post deletion.
 * **Redux Cache-First Architecture:** Posts are eagerly loaded into the global state upon authentication. Navigating between feeds and individual posts happens with zero network latency.
 * **Protected Routes:** Component-level security ensures that only post authors can see or access the Edit and Delete controls for their specific content.

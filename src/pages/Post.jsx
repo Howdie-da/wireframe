@@ -73,7 +73,7 @@ export default function Post() {
                     <h1 className="text-3xl font-bold text-white">{post.title}</h1>
                 </div>
                 
-                <div className="browser-css text-gray-300 leading-relaxed">
+                <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed">
                     {parse(post.content)}
                 </div>
             </Container>
