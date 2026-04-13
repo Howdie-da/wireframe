@@ -7,7 +7,7 @@ function Home() {
   const userName = userData?.name || "Stranger"
 
   return (
-    <div className="bg-gray-900 grow w-full flex flex-col items-center justify-center px-6 text-center">
+    <div className="bg-gray-900 grow min-h-[80vh] w-full flex flex-col items-center justify-center px-6 text-center">
       <div className="flex flex-col items-center max-w-3xl space-y-6">
         
         <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-cyan-300 to-blue-600 drop-shadow-sm">
